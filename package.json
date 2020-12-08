@@ -1,0 +1,8 @@
+{
+    "name": "advent-of-code",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Ryan Marganti <rmarganti@gannett.com>",
+    "license": "MIT",
+    "type": "module"
+}

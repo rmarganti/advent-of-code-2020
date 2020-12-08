@@ -19,18 +19,6 @@ async function main() {
     const passports = content.split("\n\n").map(parsePassport);
     const validPassports = passports.filter(isValidPassport);
 
-    // validPassports.forEach((p) =>
-    //     console.table({
-    //         byr: p.byr,
-    //         iyr: p.iyr,
-    //         eyr: p.eyr,
-    //         hgt: p.hgt,
-    //         hcl: p.hcl,
-    //         ecl: p.ecl,
-    //         pid: p.pid,
-    //     })
-    // );
-
     console.log(`Total passports: ${passports.length}`);
     console.log(`Valid passports: ${validPassports.length}`);
 }
@@ -62,13 +50,7 @@ function isValidPassport(group) {
         const value = group[v];
         const validator = validators[v];
 
-        const isValid = value !== undefined && validator(value);
-
-        if (value !== undefined && !isValid) {
-            console.log(`Invalid: ${v} => ${value}`);
-        }
-
-        return isValid;
+        return value !== undefined && validator(value);
     });
 }
 
